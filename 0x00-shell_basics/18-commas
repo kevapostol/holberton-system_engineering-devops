@@ -1,2 +1,2 @@
 i#!/bin/bash
-ls -map
+ls -a -m -p .
