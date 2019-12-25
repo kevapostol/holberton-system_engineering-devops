@@ -2,7 +2,7 @@
 
 # Systems Engineering and Devops
 
-> This repository contains the projects under Systems Engineering and Devops. The projects containing here is mainly focused on using and getting familiar with the shell.
+> This repository contains the projects under Systems Engineering and Devops. The projects contained here are mainly focused on using and getting familiar with the shell.
 
 | Project | Description |
 |--|--|
