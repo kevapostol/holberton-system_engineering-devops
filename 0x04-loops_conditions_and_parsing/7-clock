@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# displays 17 and then bad luck from Italy for the 17th loop iteration
+i=0
+while [ $i -lt 13 ]
+do
+	echo "Hour: $i"
+	j=1
+	while [ $j -lt 60 ]
+	do
+		echo "$j"
+		((j++))
+	done
+	((i++))
+done
