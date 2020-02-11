@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# To infinity and beyond
+
+kill -SIGKILL "$(pgrep -f 7-highlander)"
