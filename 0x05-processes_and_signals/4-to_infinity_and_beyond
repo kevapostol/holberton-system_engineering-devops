@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# To infinity and beyond
+for ((;;));
+do
+	echo "To infinity and beyond"
+done
