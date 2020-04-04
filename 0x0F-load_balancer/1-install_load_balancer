@@ -12,6 +12,7 @@ frontend http_front
 
 backend http_back
    balance roundrobin
+   mode http
    server 858-web-01 34.74.9.233:80 check
    server 858-web-02 18.215.156.149:80 check" >> /etc/haproxy/haproxy.cfg
 
