@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #configure haproxy
-sudo apt-get install -y software-properties-common
+sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
-sudo apt-get update
-sudo apt-get install -y haproxy=1.8.\*
+sudo apt-get -y update
+sudo apt-get -y install haproxy=1.8\*
+
 echo "
 frontend http_front
    bind *:80
@@ -11,7 +12,7 @@ frontend http_front
    default_backend http_back
 backend http_back
    balance roundrobin
-   mode http
    server 858-web-01 34.74.9.233:80 check
-   server 858-web-02 18.215.156.149:80 check" | sudo tee /etc/haproxy/haproxy.cfg
+   server 858-web-02 18.215.156.149:80 check" >> /etc/haproxy/haproxy.cfg
+
 sudo service haproxy restart
