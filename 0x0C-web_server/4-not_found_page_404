@@ -5,6 +5,6 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 echo "Holberton School" | sudo tee /var/www/html/index
 sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/huehue.html
-sudo sed -i "/listen 80 default_server/a error_page 404 /huehue.html; location = /huehue.html { root /usr/share/nginx/html; internal; }" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/not_found.html
+sudo sed -i "/listen 80 default_server/a error_page 404 /not_found.html; location = /not_found.html { root /usr/share/nginx/html; internal; }" /etc/nginx/sites-available/default
 sudo service nginx restart
