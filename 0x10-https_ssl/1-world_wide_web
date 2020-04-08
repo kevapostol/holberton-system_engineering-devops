@@ -12,8 +12,8 @@ a_info ()
     printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$subdomain"
 }
 
-for subdomain in "www" "lb-01" "web-01" "web-02"; do
-    if [ -z "$2" ] || [ "$2" == "$subdomain" ]; then
-        a_info "$1" "$subdomain"
+for i in "www" "lb-01" "web-01" "web-02"; do
+    if [ -z "$2" ] || [ "$2" == "$i" ]; then
+        a_info "$1" "$i"
     fi
 done
