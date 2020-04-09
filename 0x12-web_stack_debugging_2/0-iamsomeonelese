@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# accepts one argument and runs the whoami command under 
-# the user passed as an argument
+# whoami
 sudo su "$1" -c whoami
