@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Nginx runs as the nginx user
 pkill apache2
 chown nginx:nginx /etc/nginx/
