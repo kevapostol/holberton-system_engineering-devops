@@ -6,3 +6,23 @@ sudo ufw allow 22
 sudo ufw allow 443
 sudo ufw allow 80
 sudo ufw enable
+
+
+# STEP 1
+sudo ufw disable
+sudo ufw allow 8080/tcp
+
+
+# STEP 2: EDIT in the file
+sudo vi /etc/ufw/before.rules
+
+# ADD this line
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+
+
+# STEP 3
+sudo service ufw restart
+sudo ufw enable
