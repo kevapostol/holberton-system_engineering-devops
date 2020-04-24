@@ -5,4 +5,4 @@
 mysqldump -u root -p "$1" --all-databases > backup.sql
 #makes an archive
 now=$(date +"%d-%m-%Y")
-tar -cvzf "$now.tar.gz" backup.sql
+tar -czf "$now.tar.gz" backup.sql
