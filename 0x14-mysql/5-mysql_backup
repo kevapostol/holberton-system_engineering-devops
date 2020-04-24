@@ -2,7 +2,7 @@
 #Backup script
 
 #Dumps the database to backup.sql
-mysqldump -u root -p "$1" --all-databases > backup.sql
+mysqldump -u root -p"$1" --all-databases > backup.sql
 #makes an archive
 now=$(date +"%d-%m-%Y")
 tar -czf "$now.tar.gz" backup.sql
