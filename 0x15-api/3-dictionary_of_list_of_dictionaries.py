@@ -7,6 +7,7 @@ import json
 import requests
 from sys import argv
 
+
 def get_name(uri):
     """
     Gets the name of the user
