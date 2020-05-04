@@ -14,10 +14,10 @@ def get_name(uri):
     """
     response = requests.get(uri)
     obj = response.json()
-    return obj.get("name")
+    return obj.get("username")
 
 
-def get_tasks(uri, name):
+def get_tasks(uri, username):
     """
     Sets a list for the user
     """
@@ -27,7 +27,7 @@ def get_tasks(uri, name):
 
     for ea_task in obj_list:
         user_tasks.append({
-                          "username": name,
+                          "username": username,
                           "task": ea_task.get("title"),
                           "completed": ea_task.get("completed")
                           })
@@ -45,8 +45,8 @@ if __name__ == "__main__":
         dicts[str(ea_user.get("id"))] = []
 
     for key in dicts:
-        name = get_name(uri + "/users/{}".format(key))
-        task_list = get_tasks(uri + "/todos?userId={}".format(key), name)
+        username = get_username(uri + "/users/{}".format(key))
+        task_list = get_tasks(uri + "/todos?userId={}".format(key), username)
         dicts[key] = task_list
 
     with open("todo_all_employees.json", "w") as json_file:
