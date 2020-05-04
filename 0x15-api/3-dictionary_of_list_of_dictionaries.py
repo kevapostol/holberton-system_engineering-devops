@@ -8,7 +8,7 @@ import requests
 from sys import argv
 
 
-def get_name(uri):
+def get_username(uri):
     """
     Gets the name of the user
     """
