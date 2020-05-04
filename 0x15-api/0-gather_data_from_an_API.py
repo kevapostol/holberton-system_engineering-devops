@@ -13,9 +13,6 @@ if __name__ == "__main__":
     # Making a GET request for 'USER'
     response = requests.get(uri + "/users/{}".format(argv[1]))
 
-    # # HTTP Response code
-    # print("Response: " + str(response))
-
     obj = response.json()
     name = obj.get("name")
 
@@ -26,14 +23,15 @@ if __name__ == "__main__":
     num_tasks = len(obj_list)
 
     # Counts the completed tasks
+    completed_task = []
     for ea_todo in obj_list:
-        if ea_todo.get("completed") is True:
-            complete += 1
+            if ea_todo.get("completed") is True:
+                completed_task.append(ea_todo)
+                complete += 1
 
     print("Employee {} is done with tasks ({}/{}):".format(name, complete,
           num_tasks))
 
     # Prints the completed tasks
-    for ea_todo in obj_list:
-        if ea_todo.get("completed") is True:
+    for ea_todo in completed_task:
             print("\t {}".format(ea_todo.get("title")))
