@@ -23,9 +23,8 @@ if __name__ == "__main__":
                 completed_task.append(ea_todo)
 
     completed_tasks = len(completed_task)
-    print("Employee {} is done with tasks ({}/{}):".format(name,
+    print("Employee {} is done with tasks({}/{}):".format(name,
           completed_tasks, num_tasks))
 
-    # Prints the completed tasks
     for ea_todo in completed_task:
             print("\t {}".format(ea_todo.get("title")))
