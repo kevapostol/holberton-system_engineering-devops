@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Making a GET request for 'USER'
     response = requests.get(uri + "/users/{}".format(argv[1]))
     obj = response.json()
-    name = obj.get("name")
+    username = obj.get("username")
     response = requests.get(uri + "/todos?userId={}".format(argv[1]))
     obj_list = response.json()
 
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         user_tasks.append({
                           "task": ea_task.get("title"),
                           "completed": ea_task.get("completed"),
-                          "username": name
+                          "username": username
                           })
 
     user_dict = {argv[1]: user_tasks}
