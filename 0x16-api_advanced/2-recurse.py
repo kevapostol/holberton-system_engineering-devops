@@ -28,24 +28,3 @@ def recurse(subreddit, hot_list=[], after=None):
         return hot_list
     else:
         return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # for ea_post in posts:
-    #     title = ea_post.get("data").get("title")
-    #     hot_list.append(title)
-
-    # if obj.get("after") is not None:
-    #     recurse(subreddit, hot_list, after)
-    # else:
-    #     return hot_list
