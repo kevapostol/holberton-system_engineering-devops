@@ -9,7 +9,7 @@ import requests
 def recurse(subreddit, hot_list=[], after=None):
     """
     Prints the hot posts that are on the top 10
-    Endpoint: /r/{}/hot.json?limit=10
+    Endpoint: /r/{}/hot.json?limit=200&after={}
     """
     uri = "https://www.reddit.com/r/"
     headers = {'User-Agent': 'Chrome/81.0.4044.138'}
