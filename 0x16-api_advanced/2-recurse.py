@@ -11,9 +11,9 @@ def recurse(subreddit, hot_list=[], after=None):
     Prints the hot posts that are on the top 10
     Endpoint: /r/{}/hot.json?limit=10
     """
-    uri = "https://www.reddit.com"
+    uri = "https://www.reddit.com/r/"
     headers = {'User-Agent': 'Chrome/81.0.4044.138'}
-    new_uri = uri + "/r/{}/hot.json?limit=200&after={}".format(subreddit, after)
+    new_uri = uri + "{}/hot.json?limit=200&after={}".format(subreddit, after)
     response = requests.get(new_uri, headers=headers)
 
     if (response.status_code == 200):
