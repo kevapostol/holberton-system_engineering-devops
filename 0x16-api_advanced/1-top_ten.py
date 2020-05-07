@@ -20,5 +20,5 @@ def top_ten(subreddit):
         posts = obj.get('data').get('children')
         for ea_post in posts:
             print(ea_post.get("data").get("title"))
-    else
+    else:
         print("None")
