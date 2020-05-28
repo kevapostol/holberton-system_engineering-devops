@@ -20,7 +20,7 @@ server {
         location /airbnb-onepage/ { proxy_pass http://0.0.0.0:5000; }
         location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ { proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1; }
         location /api/ { proxy_pass http://0.0.0.0:5002; }
-        location /static { root /home/ubuntu/AirBnB_clone_v4/web_dynamic/; }
+        location /static { proxy_pass http://127.0.0.1:5003;  }
 
         add_header X-Served-By $HOSTNAME;
         error_page 404 /not_found.html; location = /not_found.html { root /usr/share/nginx/html; internal; }
